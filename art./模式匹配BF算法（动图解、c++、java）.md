@@ -135,6 +135,8 @@ public int index_BF(String s,String t){
 
 虽然没人看，但还是想说一下：
 
-本来打算明天更新的，但是有些事情需要处理一下，明天更不了 KMP 了 QAQ。
+本来打算明天发 KMP 的，但是有些事情需要处理一下，明天更不了 KMP 了 QAQ。
 
-<font color=#999AAA >下期预告：</font>模式匹配KMP算法
+只能先发一篇存稿了，下下一篇绝对 KMP。
+
+<font color=#999AAA >下期预告：</font>数据的顺序存储

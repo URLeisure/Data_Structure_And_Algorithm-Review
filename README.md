@@ -36,3 +36,6 @@
 
 ## 字符串
 1. [模式匹配BF算法（动图解、c++、java）](https://github.com/URLeisure/Data_Structure_And_Algorithm-Review/blob/main/art./%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8DBF%E7%AE%97%E6%B3%95%EF%BC%88%E5%8A%A8%E5%9B%BE%E8%A7%A3%E3%80%81c%2B%2B%E3%80%81java%EF%BC%89.md)
+
+## 数组与广义表
+1. [数据的顺序存储（图解）](https://github.com/URLeisure/Data_Structure_And_Algorithm-Review/blob/main/art./%E6%95%B0%E6%8D%AE%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%EF%BC%88%E5%9B%BE%E8%A7%A3%EF%BC%89.md)

@@ -360,3 +360,5 @@ public BNode createTree(BNode T){
 <font color=#CC3300>画图不容易，点个免费的赞吧。</font>
 
 <font color=#999AAA >下期预告：</font>二叉树的遍历
+
+<font color=#FF1493 >明天最后一篇，放假！！！2月7号再更新。

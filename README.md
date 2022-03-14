@@ -15,6 +15,10 @@
 
 如果发现文章内容问题，请联系：LChenSED@163.COM
 
+>也可以在 Issuse 中添加留言：
+* [文章内容错误留言区！！！](https://github.com/URLeisure/Data_Structure_And_Algorithm-Review/issues/3)
+* [聊天提问区！！！](https://github.com/URLeisure/Data_Structure_And_Algorithm-Review/issues/4)
+
 
 ---------------------------------------------
                                                                          

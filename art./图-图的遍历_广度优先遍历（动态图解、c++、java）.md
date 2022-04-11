@@ -167,6 +167,54 @@ private static void BFS_AL(ALGraph g, String v) {
 }
 ```
 
+#### 链式前向星实现
+				 
+* 之前没写链式前向星的，因为我感觉过程会了写起来没有难度，但是。。。
+
+<font color=#999AAA >c++代码如下（示例）：
+
+```cpp
+void BFS(int x) {
+    queue<int> q;
+    flag[x] = true;
+    q.push(x);
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        cout << u << "\t";//可以把 u 存起来最后输出，也可以直接在这里输出
+        for (int i = head[u]; ~i; i = e[i].next) {
+            int v = e[i].to;
+            if (!flag[v]) {
+                flag[v] = true;
+                q.push(v);
+            }
+        }
+    }
+}
+```
+
+<font color=#999AAA >java代码如下（示例）：
+
+```java
+public static void bfs(int x) {
+    LinkedList<Integer> queue = new LinkedList<>();
+    flag[x] = true;
+    queue.add(x);
+    while (!queue.isEmpty()) {
+        int u = queue.pop();
+        System.out.print(u + "\t");
+        for (int i = head[u]; i != -1; i = e[i].next) {
+            int v = e[i].to;
+            if (!flag[v]) {
+                flag[v] = true;
+                queue.add(v);
+           	}
+        }
+    }
+}
+
+```
+
 ## 三、完整代码
 ### 邻接矩阵版
 <font color=#999AAA >c++代码如下（示例）：
@@ -590,6 +638,161 @@ C B
 C E
 E D
 A
+ */
+```
+				     
+### 链式前向星版
+
+<font color=#999AAA >c++代码如下（示例）：
+
+```cpp
+#include<iostream>
+#include<cstring>
+#include<queue>
+
+using namespace std;
+
+const int N = 1e3;
+struct Edge {
+    int to;
+    int next;
+} e[N];
+int head[N], cnt;
+bool flag[N];
+
+void Init() {
+    memset(head, -1, sizeof head);
+    memset(flag, false, sizeof flag);
+    cnt = 0;
+}
+
+void add(int u, int v) {
+    e[cnt].to = v;
+    e[cnt].next = head[u];
+    head[u] = cnt++;
+}
+
+void BFS(int x) {
+    queue<int> q;
+    flag[x] = true;
+    q.push(x);
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        cout << u << "\t";//可以把 u 存起来最后输出，也可以直接在这里输出
+        for (int i = head[u]; ~i; i = e[i].next) {
+            int v = e[i].to;
+            if (!flag[v]) {
+                flag[v] = true;
+                q.push(v);
+            }
+        }
+    }
+}
+
+int main() {
+    Init();
+    int n;
+    cin >> n;
+    int u, v;
+    for (int i = 0; i < n; i++) {
+        cin >> u >> v;
+        add(u, v);
+    }
+
+    cin >> v;
+    BFS(v);
+    cout << endl;
+    return 0;
+}
+/*
+7
+1 2
+1 3
+2 4
+2 5
+3 2
+3 5
+5 4
+1
+ */
+```
+
+<font color=#999AAA >java代码如下（示例）：
+
+```java
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class A {
+    public static Scanner sc = new Scanner(System.in);
+    public static final int N = 1000;
+
+    public static class Edge {
+        int to;
+        int next;
+    }
+
+    public static Edge e[] = new Edge[N];
+    public static int head[] = new int[N];
+    public static boolean flag[] = new boolean[N];
+    public static int cnt;
+
+    public static void init() {
+        Arrays.fill(head, -1);
+        Arrays.fill(flag, false);
+        cnt = 0;
+    }
+
+    public static void add(int u, int v) {
+        e[cnt] = new Edge();
+        e[cnt].to = v;
+        e[cnt].next = head[u];
+        head[u] = cnt++;
+    }
+
+    public static void bfs(int x) {
+        LinkedList<Integer> queue = new LinkedList<>();
+        flag[x] = true;
+        queue.add(x);
+        while (!queue.isEmpty()) {
+            int u = queue.pop();
+            System.out.print(u + "\t");
+            for (int i = head[u]; i != -1; i = e[i].next) {
+                int v = e[i].to;
+                if (!flag[v]) {
+                    flag[v] = true;
+                    queue.add(v);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        init();
+        int n = sc.nextInt();
+        int v, u;
+        for (int i = 0; i < n; i++) {
+            u = sc.nextInt();
+            v = sc.nextInt();
+            add(u, v);
+        }
+
+        v = sc.nextInt();
+        bfs(v);
+    }
+}
+/*
+7
+1 2
+1 3
+2 4
+2 5
+3 2
+3 5
+5 4
+1
  */
 ```
 

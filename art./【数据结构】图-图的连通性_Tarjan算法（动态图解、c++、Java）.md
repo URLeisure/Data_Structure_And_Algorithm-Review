@@ -482,12 +482,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-/**
- * @author URLeisure
- * @create 2022/7/4 15:14
- * @Description 连通分量
- */
-public class L {
+public class A {
     public static final int N = 10000;
     public static Scanner sc = new Scanner(System.in);
 
